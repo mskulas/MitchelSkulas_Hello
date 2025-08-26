@@ -9,6 +9,13 @@ public class AppLauncher {
         System.out.print("Enter your age: ");
         int userage = scanner.nextInt();
 
+        if (username == null || username.trim().isEmpty()) {
+            throw new IllegalArgumentException("Name cannot be null or empty.");
+        }
+        if (userage < 0) {
+            throw new IllegalArgumentException("Age cannot be negative.");
+        }
+
         HelloWorld student = new HelloWorld(username, userage);
         HelloWorld teacher = new HelloWorld("Dr. Owen");
         student.introduce();
