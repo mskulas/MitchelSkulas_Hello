@@ -1,7 +1,15 @@
+import java.util.Scanner;
+
 public class AppLauncher {
     public static void main(String[] args) {
 
-        HelloWorld student = new HelloWorld("Mitchel", 19);
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your name: ");
+        String username = scanner.nextLine();
+        System.out.print("Enter your age: ");
+        int userage = scanner.nextInt();
+
+        HelloWorld student = new HelloWorld(username, userage);
         HelloWorld teacher = new HelloWorld("Dr. Owen");
         student.introduce();
         student.greet();
